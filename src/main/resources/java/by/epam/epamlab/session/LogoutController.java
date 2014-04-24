@@ -1,4 +1,4 @@
-package by.epam.epamlab.servlets;
+package by.epam.epamlab.session;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,15 +7,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class LogoutController
  */
-public class LoginServlet extends HttpServlet {
+public class LogoutController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginServlet() {
+    public LogoutController() {
         super();
         // TODO Auto-generated constructor stub
     }

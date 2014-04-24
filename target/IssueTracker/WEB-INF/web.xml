@@ -3,5 +3,56 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+	<display-name>Archetype Created Web Application</display-name>
+	<filter>
+		<filter-name>AuthentificationFilter</filter-name>
+		<display-name>AuthentificationFilter</display-name>
+		<description></description>
+		<filter-class>by.epam.epamlab.filters.AuthentificationFilter</filter-class>
+	</filter>
+	<filter>
+		<filter-name>RequestLoggingFilter</filter-name>
+		<display-name>RequestLoggingFilter</display-name>
+		<description></description>
+		<filter-class>by.epam.epamlab.filters.RequestLoggingFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>AuthentificationFilter</filter-name>
+		<url-pattern>/AuthenticationFilter</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>RequestLoggingFilter</filter-name>
+		<url-pattern>/RequestLoggingFilter</url-pattern>
+	</filter-mapping>
+
+	<servlet>
+		<servlet-name>AbstractController</servlet-name>
+		<display-name>AbstractController</display-name>
+		<description></description>
+		<servlet-class>by.epam.epamlab.session.AbstractController</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LoginController</servlet-name>
+		<display-name>LoginController</display-name>
+		<description></description>
+		<servlet-class>by.epam.epamlab.session.LoginController</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LogoutController</servlet-name>
+		<display-name>LogoutController</display-name>
+		<description></description>
+		<servlet-class>by.epam.epamlab.session.LogoutController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AbstractController</servlet-name>
+		<url-pattern>/AbstractController</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginController</servlet-name>
+		<url-pattern>/LoginController</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LogoutController</servlet-name>
+		<url-pattern>/LogoutController</url-pattern>
+	</servlet-mapping>
 </web-app>
