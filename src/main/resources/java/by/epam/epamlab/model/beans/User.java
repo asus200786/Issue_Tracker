@@ -12,8 +12,7 @@ public class User implements Serializable {
 	private String emailAddress;
 	private UserInRole role;
 	private String password;
-	private String passwordComfirmation;
-	
+
 	public User() {
 		super();
 	}
@@ -75,20 +74,11 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-	public String getPasswordComfirmation() {
-		return passwordComfirmation;
-	}
-
-	public void setPasswordComfirmation(String passwordComfirmation) {
-		this.passwordComfirmation = passwordComfirmation;
-	}
-
 	@Override
 	public String toString() {
 		return "User [idUser=" + idUser + ", firstName=" + firstName
 				+ ", lastName=" + lastName + ", emailAddress=" + emailAddress
-				+ ", role=" + role + ", password=" + password
-				+ ", passwordComfirmation=" + passwordComfirmation + "]";
+				+ ", role=" + role + ", password=" + password + "]";
 	}
 
 }

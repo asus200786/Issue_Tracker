@@ -1,22 +1,22 @@
-package by.epam.epamlab.session;
+package by.epam.epamlab.session.user_controllers;
 
+import by.epam.epamlab.session.AbstractController;
 import java.io.IOException;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class LoginController
+ * Servlet implementation class AddingUserController
  */
-public class LoginController extends AbstractController {
-	private static final long serialVersionUID = 1L;
-       
+public class AddingUserController extends AbstractController {
+	private static final long serialVersionUID = 201404250122L; 
     /**
-     * @see HttpServlet#HttpServlet()
+     * @see AbstractController#AbstractController()
      */
-    public LoginController() {
+    public AddingUserController() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
