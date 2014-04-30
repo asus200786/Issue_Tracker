@@ -19,8 +19,8 @@ public class User implements Serializable {
 		super();
 	}
 
-	public User(int idUser, String firstName, String emailAddress,
-			String password) {
+	public User(int idUser, String firstName, String lastName,
+			String emailAddress, String password, String role) {
 		super();
 		this.idUser = idUser;
 		this.firstName = firstName;
@@ -85,7 +85,7 @@ public class User implements Serializable {
 
 	public void setRole(String string, RolesUser role) {
 		this.role = role;
-		
+
 	}
 
 }

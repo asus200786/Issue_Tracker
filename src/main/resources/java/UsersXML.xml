@@ -6,23 +6,23 @@
 		<firstName>Hanna</firstName>
 		<lastName>Sushchanka</lastName>
 		<emailAddress>Asus200786@gmail.com</emailAddress>
-		<role>ADMINISTRATOR</role>
 		<password>password</password>
+		<role>ADMINISTRATOR</role>
 	</user>
 	<user>
 		<id>1</id>
 		<firstName>Ivan</firstName>
 		<lastName>Dushkevich</lastName>
 		<emailAddress>Dushiv@tut.by</emailAddress>
-		<role>USER</role>
 		<password>dushik</password>
+		<role>USER</role>
 	</user>
 	<user>
 		<id>2</id>
 		<firstName>Georgij</firstName>
 		<lastName>Vajvichenskij</lastName>
 		<emailAddress>Jorjick@rambler.ru</emailAddress>
-		<role>USER</role>
 		<password>gorick</password>
+		<role>USER</role>
 	</user>
 </tns:users>
