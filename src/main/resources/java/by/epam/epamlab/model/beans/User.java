@@ -68,6 +68,10 @@ public class User implements Serializable {
 		this.role = role;
 	}
 
+	public void setRole(String role) {
+		this.role = RolesUser.valueOf(role.toUpperCase());
+	}
+
 	public String getPassword() {
 		return password;
 	}
@@ -77,15 +81,36 @@ public class User implements Serializable {
 	}
 
 	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((emailAddress == null) ? 0 : emailAddress.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		if (emailAddress == null) {
+			if (other.emailAddress != null)
+				return false;
+		} else if (!emailAddress.equals(other.emailAddress))
+			return false;
+		return true;
+	}
+
+	@Override
 	public String toString() {
 		return "User [idUser=" + idUser + ", firstName=" + firstName
 				+ ", lastName=" + lastName + ", emailAddress=" + emailAddress
 				+ ", role=" + role + ", password=" + password + "]";
-	}
-
-	public void setRole(String string, RolesUser role) {
-		this.role = role;
-
 	}
 
 }
