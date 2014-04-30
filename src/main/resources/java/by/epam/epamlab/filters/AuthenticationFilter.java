@@ -37,7 +37,7 @@ public abstract class AuthenticationFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain chain) throws IOException, ServletException {
 
-		if (!isAuthentification()) {
+		if (!isAuthentication()) {
 			((HttpServletResponse) response).sendError(HttpServletResponse.SC_UNAUTHORIZED);
 			return;// break filter chain, requested JSP/servlet will not be
 					// executed
@@ -51,6 +51,6 @@ public abstract class AuthenticationFilter implements Filter {
 	 * 
 	 * @return true when authentication is deemed valid
 	 */
-	protected abstract boolean isAuthentification();
+	protected abstract boolean isAuthentication();
 
 }

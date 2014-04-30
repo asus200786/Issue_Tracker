@@ -334,7 +334,7 @@
 	into the standard deployment descriptor. -->
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"  version="3.0">
   <display-name>Archetype Created Web Application</display-name>
-  <filter>
+  <!-- <filter>
     <description></description>
     <display-name>AuthenticationFilter</display-name>
     <filter-name>AuthenticationFilter</filter-name>
@@ -353,7 +353,7 @@
   <filter-mapping>
     <filter-name>RequestLoggingFilter</filter-name>
     <url-pattern>/RequestLoggingFilter</url-pattern>
-  </filter-mapping>
+  </filter-mapping> -->
   <servlet>
     <description></description>
     <display-name>AbstractController</display-name>

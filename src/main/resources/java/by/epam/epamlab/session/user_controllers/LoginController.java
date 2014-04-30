@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import by.epam.epamlab.constants.ConstantsControllers;
+import by.epam.epamlab.interfaces.IUserDAO;
 import by.epam.epamlab.session.AbstractController;
 
 /**
@@ -23,6 +24,7 @@ public class LoginController extends AbstractController {
 		String login = request.getParameter(ConstantsControllers.EMAIL_ADDRESS);
 		String password = request.getParameter(ConstantsControllers.PASSWORD);
 		
+		IUserDAO login = User.
 		 
 	}
 

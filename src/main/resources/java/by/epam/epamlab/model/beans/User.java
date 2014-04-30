@@ -2,6 +2,8 @@ package by.epam.epamlab.model.beans;
 
 import java.io.Serializable;
 
+import by.epam.epamlab.model.enums.RolesUser;
+
 public class User implements Serializable {
 
 	private static final long serialVersionUID = 201404240248L;
@@ -10,7 +12,7 @@ public class User implements Serializable {
 	private String firstName;
 	private String lastName;
 	private String emailAddress;
-	private UserInRole role;
+	private RolesUser role;
 	private String password;
 
 	public User() {
@@ -58,11 +60,11 @@ public class User implements Serializable {
 		this.emailAddress = emailAddress;
 	}
 
-	public UserInRole getRole() {
+	public RolesUser getRole() {
 		return role;
 	}
 
-	public void setRole(UserInRole role) {
+	public void setRole(RolesUser role) {
 		this.role = role;
 	}
 
@@ -79,6 +81,11 @@ public class User implements Serializable {
 		return "User [idUser=" + idUser + ", firstName=" + firstName
 				+ ", lastName=" + lastName + ", emailAddress=" + emailAddress
 				+ ", role=" + role + ", password=" + password + "]";
+	}
+
+	public void setRole(String string, RolesUser role) {
+		this.role = role;
+		
 	}
 
 }

@@ -45,12 +45,12 @@ public class LoginFormController extends HttpServlet {
 		// method="post" as a servlet causes doPost servers for data entered
 		// into the form
 		out.println("<form method=\"post\" action = \""
-				+ request.getContextPath() + "LoginFormController\">");
+				+ request.getContextPath() + "/LoginFormController\">");
 		out.println("<div class=\"simplyLog\">");
-		out.println("<div class=\"userData\"");
+		out.println("<div class=\"userData\">");
 		out.println("Your login:");
 		out.println("<input type=\"text\" name=\"Email Address\" size=\"25\"");
-		out.println("</div><div class=\"userData\"");
+		out.println("</div><div class=\"userData\">");
 		out.println("Your password:");
 		out.println("<input type=\"text\" name=\"Password\" size=\"25\"");
 		out.println("</div><div class=\"submit\">");
@@ -87,7 +87,7 @@ public class LoginFormController extends HttpServlet {
 		if (isEmptyEnum){
 			out.println("<h2>Sorry, the request does not contain any parameters.</h2>");
 		} else {
-			out.println("Here are the submitted parameter values.");
+			out.println("<h2>Here are the submitted parameter values.</h2>");
 		}
 		
 		while (paramNames.hasMoreElements()){
