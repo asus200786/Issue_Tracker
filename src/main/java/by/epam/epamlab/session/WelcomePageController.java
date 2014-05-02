@@ -16,7 +16,7 @@ import by.epam.epamlab.utilities.ServletUtilities;
 /**
  * Servlet implementation class LoginFormController
  */
-@WebServlet("/LoginFormController")
+@WebServlet("/WelcomePageController")
 public class WelcomePageController extends AbstractController {
 	private static final long serialVersionUID = 201404262125L;
 
@@ -26,9 +26,10 @@ public class WelcomePageController extends AbstractController {
 	protected void performTask(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		PrintWriter out = response.getWriter();
-		out.println(ServletUtilities.headerWithTitle(ConstantsControllers.WELCOME_PAGE_TITLE));
 		User user = (User) session.getAttribute(ConstantsControllers.USER);
+		PrintWriter out = response.getWriter();
+		out.println(ServletUtilities
+				.headerWithTitle(ConstantsControllers.WELCOME_PAGE_TITLE));
 		out.println(ServletUtilities.userMenuFragment(user));
 		out.println(ServletUtilities.issuesListFragment(user));
 		out.println(ServletUtilities.footer());

@@ -9,16 +9,14 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet Filter implementation class RequestLoggingFilter
+ * Servlet Filter implementation class AuthentificationFilter
  */
-public class RequestLoggingFilter implements Filter {
+public abstract class AuthenticationFilter implements Filter {
 	protected ServletContext servletContext;
 
-	// Called once when this filter is instantiated.
-	// If mapped to j_security_check, called
-	// very first time j_security_check is invoked.
 	/**
 	 * @see Filter#init(FilterConfig)
 	 */
@@ -30,31 +28,30 @@ public class RequestLoggingFilter implements Filter {
 	 * @see Filter#destroy()
 	 */
 	public void destroy() {
-	
+		this.servletContext = null;
 	}
 
-	/**
-	 * Default constructor.
-	 */
-	public RequestLoggingFilter() {
-	}
-
-	// Called for every request that is mapped to this filter.
-	// If mapped to j_security_check,
-	// called for every j_security_check action
 	/**
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain chain) throws IOException, ServletException {
-		// perform pre-login action here
-		
+
+		if (!isAuthentication()) {
+			((HttpServletResponse) response)
+					.sendError(HttpServletResponse.SC_UNAUTHORIZED);
+			return;// break filter chain, requested JSP/servlet will not be
+					// executed
+		}
 		// pass the request along the filter chain
 		chain.doFilter(request, response);
-		// calls the next filter in chain.
-		// j_security_check if this filter is
-		// mapped to j_security_check.
 	}
-	
+
+	/**
+	 * logic to accept or reject access to the page, check log in status
+	 * 
+	 * @return true when authentication is deemed valid
+	 */
+	protected abstract boolean isAuthentication();
 
 }

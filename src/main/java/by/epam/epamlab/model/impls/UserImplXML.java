@@ -32,13 +32,13 @@ public class UserImplXML implements IUserDAO {
 	@Override
 	public User getUser(String login, String password) {
 		User user = users.get(login);
-		if (user != null && user.getPassword().equals(password)){
+		if (user != null && user.getPassword().equals(password)) {
 			return user;
 		}
 		return null;
 	}
 
-	private void readingXML() throws ExceptionDAO{
+	private void readingXML() throws ExceptionDAO {
 		try {
 			XMLReader xmlReader = XMLReaderFactory.createXMLReader();
 			UserHandler userHandler = new UserHandler();

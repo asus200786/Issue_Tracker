@@ -3,6 +3,7 @@ package by.epam.epamlab.session.user_controllers;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -17,6 +18,7 @@ import by.epam.epamlab.session.AbstractController;
 /**
  * Servlet implementation class LoginController
  */
+@WebServlet("/LoginController")
 public class LoginController extends AbstractController {
 	private static final long serialVersionUID = 201404252031L;
 
@@ -28,25 +30,26 @@ public class LoginController extends AbstractController {
 		String inputResult = getInputResult(login, password);
 		// With incorrect input data the user is returned to the home page
 		if (inputResult != null) {
-			jump(ConstantsControllers.WELCOME_PAGE_URL, inputResult, request,
-					response);
+			request.setAttribute(ConstantsControllers.MESSAGE, inputResult);
+			jump(ConstantsControllers.WELCOME_PAGE_URL, request, response);
 			return;
 		}
 
 		try {
 			IUserDAO userDAO = UserFactory.getClassFromFactory();
 			User user = userDAO.getUser(login, password);
+			//System.out.println("login" + user.getEmailAddress() + login);
 			if (user != null) {
 				request.getSession().setAttribute(ConstantsControllers.USER,
 						user);
-				response.sendRedirect(response
-						.encodeRedirectURL(getServletContext().getContextPath()
-								+ ConstantsControllers.WELCOME_PAGE_URL));
+				response.sendRedirect(request.getServletContext()
+						.getContextPath()
+						+ ConstantsControllers.WELCOME_PAGE_URL);
 				return;
 			} else {
-				request.setAttribute(ConstantsControllers.MESSAGE,
-						ConstantsControllers.ERROR_AUTHORIZATION);
-				jump(ConstantsControllers.WELCOME_PAGE_URL, request, response);
+				jump(ConstantsControllers.WELCOME_PAGE_URL,
+						ConstantsControllers.ERROR_AUTHORIZATION, request,
+						response);
 			}
 
 		} catch (ExceptionDAO e) {
