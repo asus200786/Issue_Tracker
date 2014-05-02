@@ -332,87 +332,81 @@
 	easily refer from these tool-specific files to the information in the standard 
 	deployment descriptor. Tools are not allowed to add the non-standard information 
 	into the standard deployment descriptor. -->
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"  version="3.0">
-  <display-name>Archetype Created Web Application</display-name>
-  <!-- <filter>
-    <description></description>
-    <display-name>AuthenticationFilter</display-name>
-    <filter-name>AuthenticationFilter</filter-name>
-    <filter-class>by.epam.epamlab.filters.AuthenticationFilter</filter-class>
-  </filter>
-  <filter>
-    <description></description>
-    <display-name>RequestLoggingFilter</display-name>
-    <filter-name>RequestLoggingFilter</filter-name>
-    <filter-class>by.epam.epamlab.filters.RequestLoggingFilter</filter-class>
-  </filter>
-  <filter-mapping>
-    <filter-name>AuthenticationFilter</filter-name>
-    <url-pattern>/AuthenticationFilter</url-pattern>
-  </filter-mapping>
-  <filter-mapping>
-    <filter-name>RequestLoggingFilter</filter-name>
-    <url-pattern>/RequestLoggingFilter</url-pattern>
-  </filter-mapping> -->
-  <servlet>
-    <description></description>
-    <display-name>AbstractController</display-name>
-    <servlet-name>AbstractController</servlet-name>
-    <servlet-class>by.epam.epamlab.session.AbstractController</servlet-class>
-  </servlet>
-  <servlet>
-    <description></description>
-    <display-name>LoginController</display-name>
-    <servlet-name>LoginController</servlet-name>
-    <servlet-class>by.epam.epamlab.session.LoginController</servlet-class>
-  </servlet>
-  <servlet>
-    <description></description>
-    <display-name>LogoutController</display-name>
-    <servlet-name>LogoutController</servlet-name>
-    <servlet-class>by.epam.epamlab.session.LogoutController</servlet-class>
-  </servlet>
-  <servlet>
-    <description></description>
-    <display-name>EditUserDataController</display-name>
-    <servlet-name>EditUserDataController</servlet-name>
-    <servlet-class>by.epam.epamlab.session.user_controllers.EditUserDataController</servlet-class>
-  </servlet>
-  <servlet>
-    <description></description>
-    <display-name>AddingUserController</display-name>
-    <servlet-name>AddingUserController</servlet-name>
-    <servlet-class>by.epam.epamlab.session.user_controllers.AddingUserController</servlet-class>
-  </servlet>
-  <servlet>
-    <description></description>
-    <display-name>ChangeUserPasswordController</display-name>
-    <servlet-name>ChangeUserPasswordController</servlet-name>
-    <servlet-class>by.epam.epamlab.session.user_controllers.ChangeUserPasswordController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>AbstractController</servlet-name>
-    <url-pattern>/AbstractController</url-pattern>
-  </servlet-mapping>
-  
-  <servlet-mapping>
-    <servlet-name>LoginController</servlet-name>
-    <url-pattern>/LoginController</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>LogoutController</servlet-name>
-    <url-pattern>/LogoutController</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>EditUserDataController</servlet-name>
-    <url-pattern>/EditUserDataController</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>AddingUserController</servlet-name>
-    <url-pattern>/AddingUserController</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>ChangeUserPasswordController</servlet-name>
-    <url-pattern>/ChangeUserPasswordController</url-pattern>
-  </servlet-mapping>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:web="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<display-name>Archetype Created Web Application</display-name>
+	<!-- <filter> <description></description> <display-name>AuthenticationFilter</display-name> 
+		<filter-name>AuthenticationFilter</filter-name> <filter-class>by.epam.epamlab.filters.AuthenticationFilter</filter-class> 
+		</filter> <filter> <description></description> <display-name>RequestLoggingFilter</display-name> 
+		<filter-name>RequestLoggingFilter</filter-name> <filter-class>by.epam.epamlab.filters.RequestLoggingFilter</filter-class> 
+		</filter> <filter-mapping> <filter-name>AuthenticationFilter</filter-name> 
+		<url-pattern>/AuthenticationFilter</url-pattern> </filter-mapping> <filter-mapping> 
+		<filter-name>RequestLoggingFilter</filter-name> <url-pattern>/RequestLoggingFilter</url-pattern> 
+		</filter-mapping> -->
+	<servlet>
+		<description></description>
+		<display-name>AbstractController</display-name>
+		<servlet-name>AbstractController</servlet-name>
+		<servlet-class>by.epam.epamlab.session.AbstractController</servlet-class>
+	</servlet>
+	<servlet>
+		<description></description>
+		<display-name>LoginController</display-name>
+		<servlet-name>LoginController</servlet-name>
+		<servlet-class>by.epam.epamlab.session.LoginController</servlet-class>
+	</servlet>
+	<servlet>
+		<description></description>
+		<display-name>LogoutController</display-name>
+		<servlet-name>LogoutController</servlet-name>
+		<servlet-class>by.epam.epamlab.session.LogoutController</servlet-class>
+	</servlet>
+	<servlet>
+		<description></description>
+		<display-name>EditUserDataController</display-name>
+		<servlet-name>EditUserDataController</servlet-name>
+		<servlet-class>by.epam.epamlab.session.user_controllers.EditUserDataController</servlet-class>
+	</servlet>
+	<servlet>
+		<description></description>
+		<display-name>AddingUserController</display-name>
+		<servlet-name>AddingUserController</servlet-name>
+		<servlet-class>by.epam.epamlab.session.user_controllers.AddingUserController</servlet-class>
+	</servlet>
+	<servlet>
+		<description></description>
+		<display-name>ChangeUserPasswordController</display-name>
+		<servlet-name>ChangeUserPasswordController</servlet-name>
+		<servlet-class>by.epam.epamlab.session.user_controllers.ChangeUserPasswordController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AbstractController</servlet-name>
+		<url-pattern>/AbstractController</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>LoginController</servlet-name>
+		<url-pattern>/LoginController</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LogoutController</servlet-name>
+		<url-pattern>/LogoutController</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EditUserDataController</servlet-name>
+		<url-pattern>/EditUserDataController</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddingUserController</servlet-name>
+		<url-pattern>/AddingUserController</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ChangeUserPasswordController</servlet-name>
+		<url-pattern>/ChangeUserPasswordController</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>WelcomePage</welcome-file>
+	</welcome-file-list>
 </web-app>
