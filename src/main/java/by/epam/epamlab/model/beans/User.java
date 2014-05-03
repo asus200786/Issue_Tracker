@@ -9,6 +9,7 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 201404240248L;
 
 	private int idUser;
+	private String login;
 	private String firstName;
 	private String lastName;
 	private String emailAddress;
@@ -19,13 +20,19 @@ public class User implements Serializable {
 		super();
 	}
 
-	public User(int idUser, String firstName, String lastName,
+	public User(String login, String firstName, String lastName,
 			String emailAddress, String password, String role) {
-		super();
-		this.idUser = idUser;
+		this(login, password, role);
 		this.firstName = firstName;
+		this.lastName = lastName;
 		this.emailAddress = emailAddress;
+
+	}
+
+	public User(String login, String password, String role) {
+		this.login = login;
 		this.password = password;
+		setRole(role);
 	}
 
 	public int getIdUser() {
@@ -34,6 +41,14 @@ public class User implements Serializable {
 
 	public void setIdUser(int idUser) {
 		this.idUser = idUser;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
 	}
 
 	public String getFirstName() {

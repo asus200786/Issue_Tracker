@@ -1,36 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:web="http://xmlns.jcp.org/xml/ns/javaee"
-	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
 	version="3.0">
 	<display-name>Archetype Created Web Application</display-name>
-	<!-- <filter> <description></description> <display-name>AuthenticationFilter</display-name> 
-		<filter-name>AuthenticationFilter</filter-name> <filter-class>by.epam.epamlab.filters.AuthenticationFilter</filter-class> 
-		</filter> <filter> <description></description> <display-name>RequestLoggingFilter</display-name> 
-		<filter-name>RequestLoggingFilter</filter-name> <filter-class>by.epam.epamlab.filters.RequestLoggingFilter</filter-class> 
-		</filter> <filter-mapping> <filter-name>AuthenticationFilter</filter-name> 
-		<url-pattern>/AuthenticationFilter</url-pattern> </filter-mapping> <filter-mapping> 
-		<filter-name>RequestLoggingFilter</filter-name> <url-pattern>/RequestLoggingFilter</url-pattern> 
-		</filter-mapping> -->
-
 	<servlet>
 		<description></description>
 		<display-name>EditUserDataController</display-name>
 		<servlet-name>EditUserDataController</servlet-name>
-		<servlet-class>by.epam.epamlab.session.user_controllers.EditUserDataController</servlet-class>
+		<servlet-class>by.epam.epamlab.session.user_controllers.EditUserDataController
+		</servlet-class>
 	</servlet>
 	<servlet>
 		<description></description>
 		<display-name>AddingUserController</display-name>
 		<servlet-name>AddingUserController</servlet-name>
-		<servlet-class>by.epam.epamlab.session.user_controllers.AddingUserController</servlet-class>
+		<servlet-class>by.epam.epamlab.session.user_controllers.AddingUserController
+		</servlet-class>
 	</servlet>
 	<servlet>
 		<description></description>
 		<display-name>ChangeUserPasswordController</display-name>
 		<servlet-name>ChangeUserPasswordController</servlet-name>
-		<servlet-class>by.epam.epamlab.session.user_controllers.ChangeUserPasswordController</servlet-class>
+		<servlet-class>by.epam.epamlab.session.user_controllers.ChangeUserPasswordController
+		</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>EditUserDataController</servlet-name>

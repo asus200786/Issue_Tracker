@@ -1,5 +1,6 @@
 package by.epam.epamlab.utilities;
 
+import by.epam.epamlab.constants.ConstantsControllers;
 import by.epam.epamlab.model.beans.User;
 import by.epam.epamlab.model.enums.RolesUser;
 
@@ -25,7 +26,7 @@ public class ServletUtilities {
 	public static String userMenuFragment(User user) {
 		StringBuilder stringBuilder = new StringBuilder();
 		stringBuilder.append("<div class=\"authentication\">\n");
-		if (user == null) {
+		if (ConstantsControllers.GUEST_USER.equals(user)) {
 			// method="post" as a servlet causes doPost servers for data entered
 			// into the form
 			stringBuilder.append("<div class=\"WelcomeMessage\"><h2>Welcome,")
@@ -57,7 +58,7 @@ public class ServletUtilities {
 			stringBuilder
 					.append("<li><a href=\"/IssueTracker/LogoutController\">Logout</a></li>\n");
 			stringBuilder.append("</ul></div>");
-			if (user.getRole() == RolesUser.ADMINISTRATOR) {
+			if (user.getRole().equals(RolesUser.ADMINISTRATOR)) {
 				stringBuilder.append("<div class=\"adminMenu\">\n");
 				stringBuilder
 						.append("<div><h3>Menu administrator's.</h3></div>\n");
@@ -90,6 +91,7 @@ public class ServletUtilities {
 
 	public static String issuesListFragment(User user) {
 		StringBuilder stringBuilder = new StringBuilder();
+		
 		return stringBuilder.toString();
 	}
 

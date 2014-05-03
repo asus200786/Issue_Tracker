@@ -25,7 +25,7 @@ public class LoginController extends AbstractController {
 	@Override
 	protected void performTask(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		String login = request.getParameter(ConstantsControllers.EMAIL_ADDRESS);
+		String login = request.getParameter(ConstantsControllers.LOGIN);
 		String password = request.getParameter(ConstantsControllers.PASSWORD);
 		String inputResult = getInputResult(login, password);
 		// With incorrect input data the user is returned to the home page
@@ -51,10 +51,8 @@ public class LoginController extends AbstractController {
 						ConstantsControllers.ERROR_AUTHORIZATION, request,
 						response);
 			}
-
 		} catch (ExceptionDAO e) {
 			e.printStackTrace();
-			response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
 		}
 
 	}

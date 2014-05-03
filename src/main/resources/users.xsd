@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/users"
+	xmlns:tns="http://www.example.org/users">
+	<element name="users">
+		<complexType>
+			<sequence>
+				<element name="users" type="tns:users" minOccurs="1"
+					maxOccurs="unbounded" />
+			</sequence>
+		</complexType>
+	</element>
+	<complexType name="users">
+		<sequence>
+			<element name="user" type="tns:user" minOccurs="1" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	<complexType name="user">
+		<sequence>
+			<element name="firstname" type="tns:userName" />
+			<element name="lastname" type="tns:userName" />
+			<element name="emailAddress" type="string" />
+		</sequence>
+		<attribute name="login" type="string" />
+		<attribute name="password" type="tns:password" />
+		<attribute name="role" type="tns:RolesUser" />
+	</complexType>
+	<simpleType name="userName">
+		<restriction base="string">
+			<!-- <pattern value="^[A-Z]+([a-zA-Z])*" /> -->
+		</restriction>
+	</simpleType>
+	<simpleType name="password">
+		<restriction base="string">
+			<!-- <pattern value="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\S+$).{5,}$" 
+				/> -->
+		</restriction>
+	</simpleType>
+	<simpleType name="RolesUser">
+		<restriction base="string">
+			<enumeration value="GUEST" />
+			<enumeration value="USER" />
+			<enumeration value="ADMINISTRATOR" />
+		</restriction>
+	</simpleType>
+</schema>
