@@ -45,8 +45,9 @@ public class UserImplXML implements IUserDAO {
 			UserHandler userHandler = new UserHandler();
 			xmlReader.setContentHandler(userHandler);
 			if (userHandler != null) {
-				xmlReader.parse(new InputSource(getClass().getResourceAsStream(
-						Constants.INPUT_XML)));
+				xmlReader.parse(new InputSource(this.getClass()
+						.getClassLoader()
+						.getResourceAsStream(Constants.INPUT_XML)));
 				users = userHandler.getUsers();
 			}
 		} catch (SAXException e) {

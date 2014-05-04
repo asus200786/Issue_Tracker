@@ -1,6 +1,5 @@
 package by.epam.epamlab.utilities;
 
-import by.epam.epamlab.constants.ConstantsControllers;
 import by.epam.epamlab.model.beans.User;
 import by.epam.epamlab.model.enums.RolesUser;
 
@@ -26,7 +25,7 @@ public class ServletUtilities {
 	public static String userMenuFragment(User user) {
 		StringBuilder stringBuilder = new StringBuilder();
 		stringBuilder.append("<div class=\"authentication\">\n");
-		if (ConstantsControllers.GUEST_USER.equals(user)) {
+		if (user==null) {
 			// method="post" as a servlet causes doPost servers for data entered
 			// into the form
 			stringBuilder.append("<div class=\"WelcomeMessage\"><h2>Welcome,")
